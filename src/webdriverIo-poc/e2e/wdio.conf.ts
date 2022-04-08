@@ -1,6 +1,8 @@
-import type { Options } from '@wdio/types'
+import type { Testrunner } from '../node_modules/@wdio/types/build/Options'
 
-export const config: Options.Testrunner = {
+export const config: Testrunner = {
+    baseUrl: 'https://google.com/',
+    path: '/',
     //
     // ====================
     // Runner Configuration
@@ -25,7 +27,7 @@ export const config: Options.Testrunner = {
         // for all available options
         tsNodeOpts: {
             transpileOnly: true,
-            project: 'test/tsconfig.json'
+            project: 'e2e/tsconfig.json'
         }
         // tsconfig-paths is only used if "tsConfigPathsOpts" are provided, if you
         // do please make sure "tsconfig-paths" is installed as dependency
@@ -123,7 +125,7 @@ export const config: Options.Testrunner = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'y',
+    // baseUrl: 'y',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
